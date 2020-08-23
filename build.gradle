@@ -2,6 +2,7 @@ plugins {
 	id 'org.springframework.boot' version '2.3.3.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
 	id 'java'
+        id 'jacoco'
 }
 
 group = 'com.edineva'
@@ -19,6 +20,16 @@ dependencies {
 	}
         testCompile 'junit:junit:4.12'
         compile 'junit:junit:4.12'
+}
+
+jacocoTestCoverageVerification {
+     violationRules {
+          rule {
+               limit {
+                    minimum = 0.2
+               }
+          }
+     }
 }
 
 test {
