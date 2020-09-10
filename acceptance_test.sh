@@ -1,3 +1,4 @@
 #!/bin/sh
-$(hostname)
-test $(curl localhost:8080/sum?a=1\&b=2) -eq 3
+echo $(hostname)
+test $(curl docker:8765/sum?a=1\&b=2) -eq 3
+
